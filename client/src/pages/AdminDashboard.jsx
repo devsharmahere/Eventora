@@ -378,7 +378,7 @@ const AdminDashboard = () => {
                           User:
                         </span>
                         <span className="font-semibold">
-                          {booking.userId?.name}
+                          {booking.userId?.fullName}
                         </span>
                         <span className="text-gray-400">
                           ({booking.userId?.email})
@@ -399,7 +399,7 @@ const AdminDashboard = () => {
                           Date:
                         </span>
                         <span>
-                          {new Date(booking.bookedAt).toLocaleString()}
+                          {new Date(booking.createdAt).toLocaleString()}
                         </span>
                       </p>
                       {booking.eventId && (

@@ -56,7 +56,7 @@ const bookEvent = asyncHandler(async (req, res) => {
     userId: req.user._id,
     eventId,
     status: "pending",
-    paymentStatus: "non-paid",
+    paymentStatus: "non_paid",
     amount: event.ticketPrice,
   });
 
@@ -105,6 +105,14 @@ const getMyBookings = asyncHandler(async (req, res) => {
   res.json(bookings);
 });
 
+const getAllBookings = asyncHandler(async (req, res) => {
+  const bookings = await Booking.find()
+    .populate("eventId")
+    .populate("userId", "fullName email");
+
+  res.json(bookings);
+});
+
 const cancelBooking = asyncHandler(async (req, res) => {
   const booking = await Booking.findById(req.params.id).populate("eventId");
   if (!booking) {
@@ -129,4 +137,5 @@ export {
   confirmBooking,
   getMyBookings,
   cancelBooking,
+  getAllBookings,
 };
