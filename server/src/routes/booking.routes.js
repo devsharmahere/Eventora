@@ -6,6 +6,7 @@ import {
   confirmBooking,
   getMyBookings,
   sendBookingOTP,
+  getAllBookings
 } from "../controllers/booking.controller.js";
 
 const router = Router();
@@ -15,5 +16,6 @@ router.post("/send-otp", protect, sendBookingOTP);
 router.get("/my", protect, getMyBookings);
 router.put("/:id/confirm", protect, admin, confirmBooking);
 router.delete("/:id", protect, cancelBooking);
+router.get("/all", protect, admin, getAllBookings);
 
 export default router;
