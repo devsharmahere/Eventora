@@ -22,15 +22,15 @@ const protect = asyncHandler(async (req, _, next) => {
     }
 
     req.user = user;
-    next();
+    return next();
   } catch (error) {
     throw new ApiError(401, error?.message || "Invalid token");
   }
 });
 
 const admin = asyncHandler(async (req, _, next) => {
-  if (req.role && req.user.role === "admin") {
-    next();
+  if (req.user && req.user.role === "admin") {
+  return next();
   }
   throw new ApiError(403, "Forbidden , admin access required");
 });
