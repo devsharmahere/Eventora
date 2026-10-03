@@ -19,7 +19,7 @@ const AdminDashboard = () => {
     category: "",
     totalSeats: "",
     ticketPrice: "",
-    image: "",
+    imageUrl: "",
   });
 
   useEffect(() => {
@@ -58,7 +58,7 @@ const AdminDashboard = () => {
         category: "",
         totalSeats: "",
         ticketPrice: "",
-        image: "",
+        imageUrl: "",
       });
       fetchData();
     } catch (error) {
@@ -256,9 +256,9 @@ const AdminDashboard = () => {
                 type="text"
                 placeholder="Image URL (Provide any direct link to an image)"
                 className="w-full border px-4 py-3 rounded-lg focus:ring-2 focus:ring-gray-700 outline-none transition"
-                value={formData.image}
+                value={formData.imageUrl}
                 onChange={(e) =>
-                  setFormData({ ...formData, image: e.target.value })
+                  setFormData({ ...formData, imageUrl: e.target.value })
                 }
               />
             </div>
