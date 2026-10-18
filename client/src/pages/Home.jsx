@@ -71,36 +71,36 @@ const Home = () => {
 
       {/* Why Choose Us / Features row */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 px-4">
-        <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:-translate-y-1 transition duration-300">
+        <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:-translate-y-1 transition duration-300">
           <div className="w-16 h-16 bg-gray-900 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-md shadow-gray-200/50">
             <FaRegClock />
           </div>
-          <h3 className="text-xl font-bold text-gray-900 mb-3">Fast Booking</h3>
-          <p className="text-gray-500 text-sm leading-relaxed">
+          <h3 className="text-xl dark:text-white font-bold text-gray-900 mb-3">Fast Booking</h3>
+          <p className="text-gray-500 dark:text-white text-sm leading-relaxed">
             Secure your tickets instantly with our fast streamlined booking
             infrastructure built for speed.
           </p>
         </div>
-        <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:-translate-y-1 transition duration-300">
+        <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:-translate-y-1 transition duration-300">
           <div className="w-16 h-16 bg-gray-900 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-md shadow-gray-200/50">
             <FaTicketAlt />
           </div>
-          <h3 className="text-xl font-bold text-gray-900 mb-3">
+          <h3 className="text-xl dark:text-white font-bold text-gray-900 mb-3">
             Seamless Access
           </h3>
-          <p className="text-gray-500 text-sm leading-relaxed">
+          <p className="text-gray-500 dark:text-white text-sm leading-relaxed">
             Download tickets instantly or manage them right from your personal
             dashboard with easily.
           </p>
         </div>
-        <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:-translate-y-1 transition duration-300">
+        <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:-translate-y-1 transition duration-300">
           <div className="w-16 h-16 bg-gray-900 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-md shadow-gray-200/50">
             <FaShieldAlt />
           </div>
-          <h3 className="text-xl font-bold text-gray-900 mb-3">
+          <h3 className="text-xl dark:text-white font-bold text-gray-900 mb-3">
             Secure Platform
           </h3>
-          <p className="text-gray-500 text-sm leading-relaxed">
+          <p className="text-gray-500 dark:text-white text-sm leading-relaxed">
             All transactions and registrations are bounded by cutting-edge
             security and 2FA OTP tech.
           </p>
@@ -108,20 +108,20 @@ const Home = () => {
       </div>
 
       <div className="flex items-center justify-between mb-8 px-2 border-b border-gray-200 pb-4">
-        <h2 className="text-3xl font-extrabold text-gray-900">
+        <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white">
           Upcoming Events
         </h2>
-        <div className="text-gray-500 font-medium">
+        <div className="text-gray-500 dark:text-white font-medium">
           {events.length} results found
         </div>
       </div>
 
       {loading ? (
-        <div className="text-center py-20 text-xl font-semibold text-gray-600">
+        <div className="text-center py-20 text-xl font-semibold text-gray-600 dark:text-white">
           Loading events...
         </div>
       ) : events.length === 0 ? (
-        <div className="text-center py-20 text-xl text-gray-500">
+        <div className="text-center py-20 text-xl text-gray-500 dark:text-white">
           No events found matching your search.
         </div>
       ) : (
@@ -203,14 +203,14 @@ const Home = () => {
       {/* Footer Section */}
       <footer className="mt-auto pt-16 pb-8 border-t border-gray-200 text-center">
         <div className="flex justify-center items-center gap-2 mb-4">
-          <FaTicketAlt className="text-gray-800 text-2xl" />
-          <span className="text-xl font-bold text-gray-900">Eventora</span>
+          <FaTicketAlt className="text-gray-800 dark:text-white text-2xl" />
+          <span className="text-xl font-bold text-gray-900 dark:text-white">Eventora</span>
         </div>
-        <p className="text-gray-500 text-sm mb-6 max-w-md mx-auto">
+        <p className="text-gray-500 dark:text-white text-sm mb-6 max-w-md mx-auto">
           The simplest, most dynamic way to manage, discover, and host
           world-class events in your local city. Let's make memories together.
         </p>
-        <div className="text-xs text-gray-400 font-medium uppercase tracking-wider">
+        <div className="text-xs text-gray-400 dark:text-white font-medium uppercase tracking-wider">
           &copy; {new Date().getFullYear()} Eventora Platform. All rights
           reserved.
         </div>
