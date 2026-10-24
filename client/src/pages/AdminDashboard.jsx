@@ -125,9 +125,9 @@ const AdminDashboard = () => {
 
       {/* Admin Stats Row */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-between">
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-between">
           <div>
-            <p className="text-gray-500 text-sm font-bold uppercase tracking-wider mb-1">
+            <p className="text-gray-500 dark:text-white text-sm font-bold uppercase tracking-wider mb-1">
               Total Revenue
             </p>
             <h3 className="text-3xl font-black text-green-600">
@@ -145,9 +145,9 @@ const AdminDashboard = () => {
             ₹
           </div>
         </div>
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-between">
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-between">
           <div>
-            <p className="text-gray-500 text-sm font-bold uppercase tracking-wider mb-1">
+            <p className="text-gray-500 dark:text-white text-sm font-bold uppercase tracking-wider mb-1">
               Paid Clients
             </p>
             <h3 className="text-3xl font-black text-blue-600">
@@ -167,9 +167,9 @@ const AdminDashboard = () => {
             👤
           </div>
         </div>
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-between">
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-between">
           <div>
-            <p className="text-gray-500 text-sm font-bold uppercase tracking-wider mb-1">
+            <p className="text-gray-500 dark:text-white text-sm font-bold uppercase tracking-wider mb-1">
               Pending Requests
             </p>
             <h3 className="text-3xl font-black text-yellow-600">
@@ -285,7 +285,7 @@ const AdminDashboard = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Events Section */}
         <div className="flex flex-col">
-          <h2 className="text-2xl font-bold mb-6 text-gray-800 flex items-center gap-3">
+          <h2 className="text-2xl font-bold mb-6 text-gray-800 dark:text-white flex items-center gap-3">
             <span className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 text-gray-600 text-sm">
               {events.length}
             </span>
@@ -335,13 +335,13 @@ const AdminDashboard = () => {
 
         {/* Bookings Section */}
         <div className="flex flex-col">
-          <h2 className="text-2xl font-bold mb-6 text-gray-800 flex items-center gap-3">
+          <h2 className="text-2xl font-bold mb-6 text-gray-800 dark:text-white flex items-center gap-3">
             <span className="flex items-center justify-center w-8 h-8 rounded-full bg-yellow-100 text-yellow-700 text-sm font-bold">
               {bookings.length}
             </span>
             Booking Requests
           </h2>
-          <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+          <div className="bg-white dark:bg-gray-700 rounded-xl shadow-sm border border-gray-100 overflow-hidden">
             <ul className="divide-y divide-gray-100 max-h-[600px] overflow-y-auto">
               {bookings.length === 0 ? (
                 <li className="p-6 text-gray-500 text-center">
@@ -354,7 +354,7 @@ const AdminDashboard = () => {
                     className={`p-6 hover:bg-gray-50 transition border-l-4 ${booking.status === "pending" ? "border-l-yellow-400" : booking.status === "confirmed" ? "border-l-green-400" : "border-l-red-400"}`}
                   >
                     <div className="flex justify-between items-start mb-3">
-                      <h4 className="font-bold text-gray-900 text-lg leading-tight">
+                      <h4 className="font-bold  text-gray-900 text-lg leading-tight">
                         {booking.eventId?.title || "Deleted Event"}
                       </h4>
                       <div className="flex flex-col gap-1 items-end shrink-0 ml-4">
@@ -372,12 +372,12 @@ const AdminDashboard = () => {
                         )}
                       </div>
                     </div>
-                    <div className="bg-gray-50 rounded-lg p-3 mb-3 border border-gray-100 text-sm">
-                      <p className="text-gray-700 flex items-center gap-2 mb-1">
-                        <span className="font-bold w-16 text-gray-500 uppercase text-xs">
+                    <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-3 mb-3 border border-gray-100 text-sm">
+                      <p className="text-gray-700 dark:text-white flex items-center gap-2 mb-1">
+                        <span className="font-bold w-16 text-gray-500 dark:text-white uppercase text-xs">
                           User:
                         </span>
-                        <span className="font-semibold">
+                        <span className="font-semibold ">
                           {booking.userId?.fullName}
                         </span>
                         <span className="text-gray-400">
@@ -385,26 +385,26 @@ const AdminDashboard = () => {
                         </span>
                       </p>
                       <p className="text-gray-700 flex items-center gap-2 mb-1">
-                        <span className="font-bold w-16 text-gray-500 uppercase text-xs">
+                        <span className="font-bold w-16 text-gray-500 dark:text-white uppercase text-xs">
                           Amount:
                         </span>
                         <span
-                          className={`font-semibold ${booking.amount === 0 ? "text-green-600" : ""}`}
+                          className={`font-semibold dark:text-white ${booking.amount === 0 ? "text-green-600 " : ""}`}
                         >
                           {booking.amount === 0 ? "Free" : `₹${booking.amount}`}
                         </span>
                       </p>
                       <p className="text-gray-700 flex items-center gap-2 mb-1">
-                        <span className="font-bold w-16 text-gray-500 uppercase text-xs">
+                        <span className="font-bold w-16 text-gray-500 dark:text-white uppercase text-xs">
                           Date:
                         </span>
-                        <span>
+                        <span className="dark:text-white">
                           {new Date(booking.createdAt).toLocaleString()}
                         </span>
                       </p>
                       {booking.eventId && (
                         <p className="text-gray-700 flex items-center gap-2 mt-2 pt-2 border-t border-gray-200">
-                          <span className="font-bold w-16 text-gray-500 uppercase text-xs">
+                          <span className="font-bold w-16 text-gray-500 dark:text-white uppercase text-xs">
                             Seats:
                           </span>
                           <span
