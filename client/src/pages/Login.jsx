@@ -42,12 +42,12 @@ const Login = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-20 bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+    <div className="max-w-md mx-auto mt-20 bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-100">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-extrabold text-gray-900 mb-2">
+        <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-2">
           Welcome Back
         </h2>
-        <p className="text-gray-500">Sign in to your Eventora account</p>
+        <p className="text-gray-500 dark:text-white">Sign in to your Eventora account</p>
       </div>
 
       {error && (
@@ -60,25 +60,25 @@ const Login = () => {
         {!showOTP ? (
           <>
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label className="block text-sm font-semibold text-gray-700 dark:text-white mb-2">
                 Email Address
               </label>
               <input
                 type="email"
                 required
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-700 focus:border-gray-700 transition shadow-sm"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:text-white focus:ring-2 focus:ring-gray-700 focus:border-gray-700 transition shadow-sm"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label className="block text-sm font-semibold text-gray-700 dark:text-white mb-2">
                 Password
               </label>
               <input
                 type="password"
                 required
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-700 focus:border-gray-700 transition shadow-sm"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:text-white focus:ring-2 focus:ring-gray-700 focus:border-gray-700 transition shadow-sm"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -103,7 +103,7 @@ const Login = () => {
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-gray-900 text-white font-bold py-3 rounded-lg hover:bg-black focus:ring-4 focus:ring-gray-200 transition shadow-md"
+          className="w-full bg-gray-900 dark:bg-gray-700 text-white font-bold py-3 rounded-lg hover:bg-black focus:ring-4 focus:ring-gray-200 transition shadow-md"
         >
           {loading
             ? "Processing..."
@@ -113,11 +113,11 @@ const Login = () => {
         </button>
       </form>
 
-      <p className="text-center mt-8 text-gray-600">
+      <p className="text-center mt-8 text-gray-600 dark:text-white">
         Don't have an account?{" "}
         <Link
           to="/register"
-          className="text-gray-900 font-bold hover:underline"
+          className="text-gray-900 dark:text-white font-bold hover:underline"
         >
           Sign up
         </Link>

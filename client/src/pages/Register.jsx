@@ -35,12 +35,12 @@ const Register = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-16 bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+    <div className="max-w-md mx-auto mt-16 bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-100">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-extrabold text-gray-900 mb-2">
+        <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-2">
           Create an Account
         </h2>
-        <p className="text-gray-500">Join Eventora today</p>
+        <p className="text-gray-500 dark:text-white">Join Eventora today</p>
       </div>
 
       {error && (
@@ -53,7 +53,7 @@ const Register = () => {
         {!showOTP ? (
           <>
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label className="block text-sm font-semibold text-gray-700 dark:text-white mb-2">
                 Full Name
               </label>
               <input
@@ -65,7 +65,7 @@ const Register = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label className="block text-sm font-semibold text-gray-700 dark:text-white mb-2">
                 Email Address
               </label>
               <input
@@ -77,7 +77,7 @@ const Register = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label className="block text-sm font-semibold text-gray-700 dark:text-white mb-2">
                 Password
               </label>
               <input
@@ -112,7 +112,7 @@ const Register = () => {
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-gray-900 text-white font-bold py-3 rounded-lg hover:bg-black focus:ring-4 focus:ring-gray-200 transition shadow-md mt-4"
+          className="w-full bg-gray-900 dark:bg-gray-700 text-white font-bold py-3 rounded-lg hover:bg-black focus:ring-4 focus:ring-gray-200 transition shadow-md mt-4"
         >
           {loading
             ? "Processing..."
@@ -123,9 +123,9 @@ const Register = () => {
       </form>
 
       {!showOTP && (
-        <p className="text-center mt-6 text-gray-600">
+        <p className="text-center mt-6 text-gray-600 dark:text-white">
           Already have an account?{" "}
-          <Link to="/login" className="text-gray-900 font-bold hover:underline">
+          <Link to="/login" className="text-gray-900 dark:text-white font-bold hover:underline">
             Sign in
           </Link>
         </p>
