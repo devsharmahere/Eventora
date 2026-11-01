@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import api from "../utils/axios.js";
 
@@ -9,11 +10,14 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
+
     if (storedUser) {
       setUser(JSON.parse(storedUser));
     }
+
     setLoading(false);
   }, []);
+
   const login = async (email, password) => {
     try {
       const { data } = await api.post("/auth/login", {
@@ -22,6 +26,7 @@ export const AuthProvider = ({ children }) => {
       });
 
       setUser(data.data.user);
+
       localStorage.setItem("user", JSON.stringify(data.data.user));
       localStorage.setItem("token", data.data.token);
 
@@ -39,39 +44,23 @@ export const AuthProvider = ({ children }) => {
         email,
         password,
       });
-      setUser(data.data);
-      return data;
+
+      return data.data;
     } catch (error) {
       console.error("Registration failed:", error);
       throw error;
     }
   };
-  const verifyOTP = async (email, otp) => {
-    try {
-      const { data } = await api.post("/auth/verify-otp", {
-        email,
-        otp,
-      });
 
-      setUser(data.data.user);
-
-      localStorage.setItem("user", JSON.stringify(data.data.user));
-      localStorage.setItem("token", data.data.token);
-
-      return data.data;
-    } catch (error) {
-      console.error("OTP Verification failed", error);
-      throw error;
-    }
-  };
   const logout = async () => {
     setUser(null);
     localStorage.removeItem("user");
     localStorage.removeItem("token");
   };
+
   return (
     <AuthContext.Provider
-      value={{ user, loading, login, logout, verifyOTP, register }}
+      value={{ user, loading, login, logout, register }}
     >
       {children}
     </AuthContext.Provider>
