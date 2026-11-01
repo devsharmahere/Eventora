@@ -5,14 +5,12 @@ import {
   cancelBooking,
   confirmBooking,
   getMyBookings,
-  sendBookingOTP,
-  getAllBookings
+  getAllBookings,
 } from "../controllers/booking.controller.js";
 
 const router = Router();
 
 router.post("/", protect, bookEvent);
-router.post("/send-otp", protect, sendBookingOTP);
 router.get("/my", protect, getMyBookings);
 router.put("/:id/confirm", protect, admin, confirmBooking);
 router.delete("/:id", protect, cancelBooking);
