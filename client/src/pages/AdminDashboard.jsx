@@ -99,7 +99,7 @@ const AdminDashboard = () => {
 
   if (loading)
     return (
-      <div className="text-center py-20 text-xl font-semibold">
+      <div className="text-center dark:text-white py-20 text-xl font-semibold">
         Loading admin panel...
       </div>
     );
@@ -291,7 +291,7 @@ const AdminDashboard = () => {
             </span>
             All Events
           </h2>
-          <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+          <div className="bg-white dark:bg-gray-800  rounded-xl shadow-sm border border-gray-100 overflow-hidden">
             <ul className="divide-y divide-gray-100 max-h-[600px] overflow-y-auto">
               {events.length === 0 ? (
                 <li className="p-6 text-gray-500 text-center">
@@ -301,10 +301,10 @@ const AdminDashboard = () => {
                 events.map((event) => (
                   <li
                     key={event._id}
-                    className="p-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 hover:bg-gray-50 transition border-b border-gray-100 last:border-0"
+                    className="p-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 hover:bg-gray-900 transition border-b border-gray-100 last:border-0"
                   >
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-1 leading-tight">
+                      <h4 className="font-bold text-gray-900 dark:text-white mb-1 leading-tight">
                         {event.title}
                       </h4>
                       <div className="flex flex-wrap items-center gap-3 text-sm text-gray-500">
@@ -341,7 +341,7 @@ const AdminDashboard = () => {
             </span>
             Booking Requests
           </h2>
-          <div className="bg-white dark:bg-gray-700 rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 overflow-hidden">
             <ul className="divide-y divide-gray-100 max-h-[600px] overflow-y-auto">
               {bookings.length === 0 ? (
                 <li className="p-6 text-gray-500 text-center">
@@ -351,10 +351,10 @@ const AdminDashboard = () => {
                 bookings.map((booking) => (
                   <li
                     key={booking._id}
-                    className={`p-6 hover:bg-gray-50 transition border-l-4 ${booking.status === "pending" ? "border-l-yellow-400" : booking.status === "confirmed" ? "border-l-green-400" : "border-l-red-400"}`}
+                    className={`p-6 hover:bg-gray-900 transition border-l-4 ${booking.status === "pending" ? "border-l-yellow-400" : booking.status === "confirmed" ? "border-l-green-400" : "border-l-red-400"}`}
                   >
                     <div className="flex justify-between items-start mb-3">
-                      <h4 className="font-bold  text-gray-900 text-lg leading-tight">
+                      <h4 className="font-bold dark:text-white text-gray-900 text-lg leading-tight">
                         {booking.eventId?.title || "Deleted Event"}
                       </h4>
                       <div className="flex flex-col gap-1 items-end shrink-0 ml-4">
