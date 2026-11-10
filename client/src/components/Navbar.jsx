@@ -26,7 +26,7 @@ const Navbar = () => {
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
             <Link
               to="/"
-              className="text-black dark:text-gray-200 hover:text-white transition cursor-pointer"
+              className="text-black dark:text-gray-200 hover:text-gray-500 transition cursor-pointer"
             >
               Events
             </Link>
@@ -34,13 +34,13 @@ const Navbar = () => {
               <>
                 <Link
                   to={user.role === "admin" ? "/admin" : "/dashboard"}
-                  className="text-black dark:text-gray-200 hover:text-white transition"
+                  className="text-black dark:text-gray-200 hover:text-gray-500 transition"
                 >
                   Dashboard
                 </Link>
                 <button
                   onClick={handleLogout}
-                  className="bg-white text-black dark:bg-gray-700 dark:hover:bg-black text-white px-4 py-2 rounded-md transition"
+                  className="bg-gray-400 hover:bg-gray-500 text-black dark:text-white dark:bg-gray-700 dark:hover:bg-gray-500 px-4 py-2 rounded-md transition"
                 >
                   Logout
                 </button>

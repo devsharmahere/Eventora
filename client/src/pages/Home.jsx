@@ -71,7 +71,7 @@ const Home = () => {
 
       {/* Why Choose Us / Features row */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 px-4">
-        <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:-translate-y-1 transition duration-300">
+        <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:-translate-y-1 transition duration-300">
           <div className="w-16 h-16 bg-gray-900 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-md shadow-gray-200/50">
             <FaRegClock />
           </div>
@@ -81,7 +81,7 @@ const Home = () => {
             infrastructure built for speed.
           </p>
         </div>
-        <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:-translate-y-1 transition duration-300">
+        <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:-translate-y-1 transition duration-300">
           <div className="w-16 h-16 bg-gray-900 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-md shadow-gray-200/50">
             <FaTicketAlt />
           </div>
@@ -93,7 +93,7 @@ const Home = () => {
             dashboard with easily.
           </p>
         </div>
-        <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:-translate-y-1 transition duration-300">
+        <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:-translate-y-1 transition duration-300">
           <div className="w-16 h-16 bg-gray-900 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-md shadow-gray-200/50">
             <FaShieldAlt />
           </div>
@@ -129,7 +129,7 @@ const Home = () => {
           {events.map((event) => (
             <div
               key={event._id}
-              className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition flex flex-col"
+              className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition flex flex-col"
             >
               <div className="h-48 bg-gray-200 overflow-hidden relative">
                 {event.imageUrl ? (
@@ -152,15 +152,15 @@ const Home = () => {
                 </div>
               </div>
               <div className="p-6 flex-grow flex flex-col">
-                <div className="text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">
+                <div className="text-xs font-bold text-gray-700 dark:text-white uppercase tracking-wider mb-2">
                   {event.category}
                 </div>
-                <h2 className="text-xl font-bold text-gray-800 mb-3">
+                <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-3">
                   {event.title}
                 </h2>
-                <div className="flex flex-col gap-2 mb-4 text-gray-600 text-sm">
+                <div className="flex flex-col gap-2 mb-4 text-gray-600 dark:text-white text-sm">
                   <div className="flex items-center gap-2">
-                    <FaCalendarAlt className="text-gray-400" />
+                    <FaCalendarAlt className="text-gray-400 dark:text-white" />
                     <span>
                       {new Date(event.date).toLocaleDateString(undefined, {
                         weekday: "long",
@@ -171,7 +171,7 @@ const Home = () => {
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <FaMapMarkerAlt className="text-gray-400" />
+                    <FaMapMarkerAlt className="text-gray-400 dark:text-white" />
                     <span>{event.location}</span>
                   </div>
                 </div>
@@ -184,12 +184,12 @@ const Home = () => {
                       }}
                     ></div>
                   </div>
-                  <p className="text-xs text-gray-500 mb-4">
+                  <p className="text-xs text-gray-500 dark:text-white mb-4">
                     {event.availableSeats} of {event.totalSeats} seats remaining
                   </p>
                   <Link
                     to={`/events/${event._id}`}
-                    className="block w-full text-center bg-gray-100 hover:bg-gray-200 text-gray-900 font-semibold py-2 rounded-lg transition"
+                    className="block w-full text-center bg-gray-100 hover:bg-gray-500 text-gray-900 dark:bg-gray-700 dark:text-white font-semibold py-2 rounded-lg transition"
                   >
                     View Details
                   </Link>
