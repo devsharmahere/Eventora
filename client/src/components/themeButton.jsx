@@ -1,29 +1,64 @@
 import useTheme from "../context/ThemeContext.js";
+import { FaSun, FaMoon } from "react-icons/fa";
 
-export default function ThemeBtn() {
-  const { theme, darkTheme, lightTheme } = useTheme();
+const ThemeBtn = () => {
+  const { theme, lightTheme, darkTheme } = useTheme();
 
-  const ChangeTheme = (e) => {
-    const darkModeStatus = e.currentTarget.checked;
-    if (darkModeStatus) {
-      darkTheme();
-    } else {
+  const isDark = theme === "dark";
+
+  const toggleTheme = () => {
+    if (isDark) {
       lightTheme();
+    } else {
+      darkTheme();
     }
   };
+
   return (
-    <label className="relative inline-flex items-center cursor-pointer">
-      <input
-        type="checkbox"
-        value=""
-        className="sr-only peer"
-        onChange={ChangeTheme}
-        checked={theme === "dark"}
-      />
-      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-      <span className="ml-3 text-sm font-medium text-gray-900 dark:text-white">
-        Toggle Theme
+    <button
+      type="button"
+      onClick={toggleTheme}
+      aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
+      aria-pressed={isDark}
+      className={`flex items-center gap-3 px-3 py-2 rounded-full transition-colors duration-300 ${
+        isDark ? "bg-gray-800 text-white" : "bg-gray-100 text-gray-900"
+      }`}
+    >
+      {/* Toggle Track */}
+      <span
+        className={`relative flex items-center w-16 h-8 rounded-full p-1 transition-colors duration-300 ${
+          isDark ? "bg-indigo-700" : "bg-blue-500"
+        }`}
+      >
+        {/* Sliding Circle */}
+        <span
+          className={`absolute left-1 w-6 h-6 bg-white rounded-full shadow-md flex items-center justify-center transform transition-transform duration-500 ease-in-out ${
+            isDark ? "translate-x-8" : "translate-x-0"
+          }`}
+        >
+          {/* Sun Icon */}
+          <FaSun
+            className={`absolute text-amber-500 transition-all duration-500 ${
+              isDark
+                ? "rotate-90 scale-0 opacity-0"
+                : "rotate-0 scale-100 opacity-100"
+            }`}
+            size={14}
+          />
+
+          {/* Moon Icon */}
+          <FaMoon
+            className={`absolute text-indigo-600 transition-all duration-500 ${
+              isDark
+                ? "rotate-0 scale-100 opacity-100"
+                : "-rotate-90 scale-0 opacity-0"
+            }`}
+            size={13}
+          />
+        </span>
       </span>
-    </label>
+    </button>
   );
-}
+};
+
+export default ThemeBtn;
